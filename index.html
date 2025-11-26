@@ -7,10 +7,29 @@
     <title>Mart</title>
     <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2:regular,500,600,700,800" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
     <div class="wrap">
+        <div class="emailDiv">
+            <div class="emailHeader">
+                <button id="emailExitBtn">X</button>
+            </div>
+            <div class="emailMain">
+                <div class="profileDiv">
+                    <div class="profilePicture"></div>
+                    <div class="backgroundPicture"></div>
+                </div>
+                <div class="inputDiv">
+                    <input placeholder="Username" type="text" id="usernameInput">
+                    <input placeholder="Password" type="text" id="passwordInput">
+                    <button id="logInBtn">Log in</button>
+                </div>
+            </div>
+        </div>
         <div class="header">
             <div class="logo"></div>
             <div class="nav">
@@ -32,7 +51,7 @@
                 </div>
             </div>
             <div class="headerBtnDiv">
-                <button class="btnDesign" id="logInBtn">Log In</button>
+                <button class="btnDesign" id="logInEnterBtn">Log In</button>
             </div>
         </div>
         <div class="page1">
@@ -45,7 +64,7 @@
         </div>
     </div>
 
-    <script src="./main.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

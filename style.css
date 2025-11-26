@@ -8,7 +8,6 @@
 
 ::-webkit-scrollbar {
     width: 12px;
-    /* Set width of vertical scrollbar */
 }
 
 ::-webkit-scrollbar-track {
@@ -17,7 +16,10 @@
 
 ::-webkit-scrollbar-thumb {
     background-color: #59BE29;
-    /* Add a border */
+}
+
+::placeholder {
+    color: #c4c4c4;
 }
 
 .wrap {
@@ -26,6 +28,163 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.emailDiv {
+    width: 50%;
+    height: 50%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 5px solid #20bd7b;
+    transition: 0.3s;
+}
+
+.emailMain {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: row;
+}
+
+.inputDiv {
+    width: 60%;
+    height: 100%;
+    background-size: cover;
+    background-image: url(https://images.unsplash.com/photo-1696937525057-efcb5dbc84e3?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: inset 0 0 60px 30px rgb(0, 0, 0);
+    animation-name: Shake;
+    animation-duration: 20s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+
+    input {
+        border-radius: 10px;
+        width: 70%;
+        height: 15%;
+        border: 5px solid #20bd7b;
+        background-color: #4a885f;
+        outline: none;
+        padding: 20px;
+        font-size: 30px;
+        font-weight: 400;
+        color: #fff;
+        transition: 0.3s ease-in-out;
+    }
+
+    input:focus {
+        width: 80%;
+        border: 5px solid #2f7cd4;
+        background-color: #4a6788;
+        transform: scale(1.08);
+    }
+
+    button {
+        width: 50%;
+        height: 20%;
+        background-color: #49d879;
+        border-radius: 10px;
+        color: #fff;
+        border: 5px solid #98fcb9;
+        font-size: 40px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+        filter: brightness(1.1);
+    }
+
+    button:active {
+        transform: scale(0.8);
+        background-color: #49a4d8;
+        border: 5px solid #94c0f1;
+    }
+}
+
+.profileDiv {
+    width: 40%;
+    height: 100%;
+    background-color: #d6d6d6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    position: relative;
+}
+
+.profilePicture {
+    width: 70%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    filter: drop-shadow(#61a840 0 0 30px);
+    z-index: 2;
+    box-shadow: inset 0 0 10px 10px #61a840;
+    background-image: url(https://preview.redd.it/random-question-but-does-anyone-have-versions-of-this-cat-v0-ya8qikz9kn0f1.png?auto=webp&s=c2fdba9a3904ab3bec9e7367e380f66343c2929a);
+}
+
+.backgroundPicture {
+    width: 110%;
+    aspect-ratio: 1/1;
+    position: absolute;
+    background-size: contain;
+    background-position: center;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-image: url(https://png.pngtree.com/png-vector/20240129/ourmid/pngtree-mixed-fruit-circular-border-png-image_11559675.png);
+}
+
+.emailHeader {
+    width: 100%;
+    height: 15%;
+    background-color: #8adf62;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 10px;
+    border-bottom: 5px solid #49d879;
+
+    button {
+        cursor: pointer;
+        height: 80%;
+        aspect-ratio: 1/1;
+        border: none;
+        background-color: rgb(247, 85, 85);
+        color: #fff;
+        border-radius: 7px;
+        font-size: 30px;
+        font-weight: 500;
+        transition: 0.2s;
+        box-shadow: inset 0 10px 20px 5px rgba(101, 101, 101, 0.3);
+    }
+
+    button:hover {
+        background-color: rgb(255, 73, 73);
+        filter: drop-shadow(rgb(255, 73, 73) 0 0 2px);
+        transform: scale(1.1);
+    }
+
+    button:active {
+        background-color: rgb(160, 8, 8);
+        filter: drop-shadow(rgb(255, 73, 73) 0 0 0);
+        transform: scale(0.8);
+    }
 }
 
 .header {
@@ -67,7 +226,7 @@
     align-items: center;
     justify-content: center;
     color: #888;
-    transition: 0.2s;
+    transition: 0.3s;
     cursor: pointer;
 }
 
@@ -132,4 +291,50 @@
 .page2 {
     width: 100%;
     height: 80vh;
+}
+
+@keyframes Shake {
+    0% {
+        background-position: 0 0;
+    }
+
+    10% {
+        background-position: 5px 10px;
+    }
+
+    20% {
+        background-position: 10px 20px;
+    }
+
+    30% {
+        background-position: 12px 18px;
+    }
+
+    40% {
+        background-position: 15px 30px;
+    }
+
+    50% {
+        background-position: 10px 18px;
+    }
+
+    60% {
+        background-position: 6px 13px;
+    }
+
+    70% {
+        background-position: 10px 18px;
+    }
+
+    80% {
+        background-position: 13px 24px;
+    }
+
+    90% {
+        background-position: 10px 5px;
+    }
+
+    0% {
+        background-position: 0 0;
+    }
 }
