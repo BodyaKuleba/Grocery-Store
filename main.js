@@ -7,12 +7,17 @@ let usersRegister = [
     {
         name: 'Bogdan',
         password: '5555',
-    }
+    },
+
+    {
+        name: 'Bogdan',
+        password: '5555',
+    },
 ]
 
 function signTry(inputedUser,inputedPassword) {
     for (let user of usersRegister) {
-        if (user === inputedUser) {
+        if (user === inputedUser && password == inputedPassword) {
             return true 
         } else {
             continue
