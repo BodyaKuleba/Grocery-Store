@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Baloo Chettan 2";
+    user-select: none;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    /* Set width of vertical scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #59BE29;
+    /* Add a border */
+}
+
+.wrap {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f7f7f7;
+    border-bottom: 5px solid #f9f9f9;
+}
+
+.logo {
+    width: 300px;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(https://media.makeameme.org/created/best-placeholder-ever.jpg);
+}
+
+.nav {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    transition: 0.2s;
+    font-size: 30px;
+}
+
+.sectionContainer {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.sectionContainer:hover {
+    color: #333;
+
+    .underLineNav {
+        width: 100%;
+    }
+}
+
+.sectionContainer:active {
+    transform: scale(0.6);
+
+    .underLineNav {
+        width: 100%;
+    }
+}
+
+.underLineNav {
+    width: 0;
+    height: 3px;
+    background-color: rgb(119, 179, 28);
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.btnDesign {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px 40px;
+    border: none;
+    font-size: 20px;
+    background-color: #59BE29;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: #dbdbdb 6px 6px 10px;
+    box-shadow: inset 0 10px 20px 5px rgba(101, 101, 101, 0.2);
+}
+
+.btnDesign:hover {
+    border-radius: 25px;
+    font-size: 30px;
+    transform: scale(1.15);
+    filter: brightness(1.1);
+    box-shadow: none;
+    box-shadow: inset 0 10px 20px 5px rgba(101, 101, 101, 0.2);
+}
+
+.btnDesign:active {
+    border-radius: 10px 40px;
+    font-size: 20px;
+    transform: scale(0.8);
+    filter: brightness(0.8);
+    box-shadow: inset 0 10px 20px 5px rgba(101, 101, 101, 0.2);
+}
+
+.page1 {
+    width: 100%;
+    height: 80vh;
+}
+
+.page2 {
+    width: 100%;
+    height: 80vh;
+}
