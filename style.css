@@ -110,8 +110,6 @@
 }
 
 .btnDesign:hover {
-    border-radius: 25px;
-    font-size: 30px;
     transform: scale(1.15);
     filter: brightness(1.1);
     box-shadow: none;
