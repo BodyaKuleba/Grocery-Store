@@ -10,19 +10,17 @@ let usersRegister = [
     }
 ]
 let logMenuOpened = false
+let notificationOn = false
 
 function signTry(inputedUser, inputedPassword) {
     for (let user of usersRegister) {
         if (user === inputedUser) {
             return true
-        } else {
-            continue
         }
     }
 
     return false
 }
-
 signTry()
 
 function logInMenu() {
@@ -35,10 +33,26 @@ function logInMenu() {
     }
 }
 
+function notification(textContent, duration) {
+    if (notificationOn == false) {
+        notificationOn = true
+        $(".notification").css("top", "-1%")
+        $(".notiText").text(`${textContent}`)
+        setTimeout(function () {
+            $(".notification").css("top", "-20%")
+            notificationOn = false
+        }, 2000)
+    }
+}
+
 $("#emailExitBtn").click(() => {
     logInMenu()
 })
 
 $("#logInEnterBtn").click(() => {
     logInMenu()
+})
+
+$("#logInBtn").click(() => {
+    notification("Login Failed", 2000)
 })
