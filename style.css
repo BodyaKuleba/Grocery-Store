@@ -317,6 +317,20 @@
     box-shadow: 0 5px 5px rgba(101, 101, 101, 0.2);
 }
 
+.btnDesign3 {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px 40px;
+    border: none;
+    font-size: 20px;
+    background-color: #ff5b50;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: #dbdbdb 6px 6px 10px;
+    box-shadow: 0 5px 5px rgba(101, 101, 101, 0.2);
+}
+
 .btnDesign:hover {
     transform: scale(1.15);
     filter: brightness(1.1);
@@ -359,6 +373,20 @@
     box-shadow: 0 0 0 0 rgba(101, 101, 101, 0.2);
 }
 
+.btnDesign3:hover {
+    transform: scale(1.15);
+    filter: brightness(1.1);
+    box-shadow: 0 10px 20px 5px rgba(101, 101, 101, 0.2);
+}
+
+.btnDesign3:active {
+    border-radius: 10px 40px;
+    font-size: 20px;
+    transform: scale(0.8);
+    filter: brightness(0.8);
+    box-shadow: 0 0 0 0 rgba(101, 101, 101, 0.2);
+}
+
 .page1 {
     width: 100%;
     height: 60vh;
@@ -374,9 +402,7 @@
 .right {
     width: 60%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-image: url();
 }
 
 .leftTextDiv {
@@ -414,6 +440,23 @@
     color: #0A1902;
     font-size: 25px;
     font-weight: 100;
+}
+
+.notLogInDiv {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profilePictureHeader {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .page2 {

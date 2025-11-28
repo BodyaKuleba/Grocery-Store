@@ -14,14 +14,18 @@ let notificationOn = false
 
 function signTry(inputedUser, inputedPassword) {
     for (let user of usersRegister) {
-        if (user === inputedUser) {
+        if (user.name == inputedUser && user.password == inputedPassword) {
             return true
         }
     }
-
-    return false
 }
 signTry()
+
+$("#logInBtn").click(() => {
+    let inpUser = $("#usernameInput").val()
+    let inpPassword = $("#passwordInput").val()
+    signTry(`${inpUser}`, `${inpPassword}`)
+})
 
 function logInMenu() {
     if (!logMenuOpened) {
@@ -51,8 +55,4 @@ $("#emailExitBtn").click(() => {
 
 $("#logInEnterBtn").click(() => {
     logInMenu()
-})
-
-$("#logInBtn").click(() => {
-    notification("Login Failed", 2000)
 })
