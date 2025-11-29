@@ -30,6 +30,44 @@
     flex-direction: column;
 }
 
+.microwave-phone {
+    width: 800px;
+    height: 450px;
+    position: fixed;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    background-image: url(./Images/microwave.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.microwave-phone .imager-part {
+    width: 600px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.microwave-phone .button-part {
+    width: 200px;
+    height: 100%;
+
+    cursor: pointer;
+}
+
+.microwave-phone .imager-part img {
+    width: 30%;
+    border-radius: 50%;
+    position: relative;
+
+
+}
+
 .notification {
     width: 30%;
     height: 20%;
