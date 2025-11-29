@@ -54,6 +54,9 @@ if (lastAcc !== "none") {
     } else if (lastAcc == "Stepan") {
         $(".profilePicture").css("background-image", "url(Images/Stepa.jpg)")
         $(".profilePictureHeader").css("background-image", "url(Images/Stepa.jpg)")
+    } else if (lastAcc == "Sasha") {
+        $(".profilePicture").css("background-image", "url(Images/Sashko.png)")
+        $(".profilePictureHeader").css("background-image", "url(Images/Sashko.png)")
     }
 }
 
@@ -78,6 +81,10 @@ function signTry(iUser, iPassword) {
                 $(".profilePicture").css("background-image", "url(Images/Stepa.jpg)")
                 $(".profilePictureHeader").css("background-image", "url(Images/Stepa.jpg)")
                 localStorage.setItem("lastAccount", "Stepan")
+            } else if (user.name === "Sasha") {
+                $(".profilePicture").css("background-image", "url(Images/Sashko.png)")
+                $(".profilePictureHeader").css("background-image", "url(Images/Sashko.png)")
+                localStorage.setItem("lastAccount", "Sasha")
             }
 
             break
