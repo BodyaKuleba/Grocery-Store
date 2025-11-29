@@ -21,8 +21,8 @@ let usersRegister = [
 ]
 
 let sounds = {
-    ad: new Audio("Sounds/buy-add.mp3"),
-    call: new Audio("Sounds/nokia.mp3"),
+    ad: new Audio("Sounds/ad.mp3"),
+    call: new Audio("Sounds/call.mp3"),
 }
 
 let logMenuOpened = false
@@ -129,32 +129,55 @@ $("#logOutBtn").click(() => {
     localStorage.setItem("lastAccount", "none")
 })
 
-let callRequie = setInterval(() => {
-    let chance = Math.floor(Math.random() * 25)
+// let callRequie = setInterval(() => {
+//     let chance = Math.floor(Math.random() * 25)
 
-    messageSystem("Sasha is calling!", 3000)
+//     if (chance == 5) {
+//         sounds.call.currentTime = 0
+//         sounds.call.play()
+//         messageSystem("Sasha is calling!", 3000)
 
-    if (chance == 5) {
+//         clearTimeout(callRequie)
+
+//         let declineTimeout = setTimeout(() => {
+//             $(".call").css("display", "none")
+//             clearTimeout(callRequie)
+//             sounds.call.pause()
+//         }, 15000)
+
+//         $(".call").css("display", "flex")
+//     }
+
+// }, 1000)
+
+let callOn = false
+
+$("#learnMoreBtn").click(() => {
+    if (callOn !== true) {
         sounds.call.currentTime = 0
         sounds.call.play()
-
-        clearTimeout(callRequie)
+        messageSystem("Sasha is calling!", 3000)
+        $(".call").css("display", "flex")
+        callOn = true
 
         let declineTimeout = setTimeout(() => {
             $(".call").css("display", "none")
-            clearTimeout(callRequie)
+            callOn = false
             sounds.call.pause()
         }, 15000)
-
-        $(".call").css("display", "flex")
     }
+})
 
-    $('#acceptCallBtn').click(() => {
-        clearTimeout(callRequie)
+$(".callBtn1").click(() => {
+    $(".call").css("display", "none")
+    callOn = false
+    sounds.call.pause()
+})
 
-        sounds.call.pause()
+$(".callBtn2").click(() => {
+    sounds.call.pause()
 
-        sounds.add.currentTime = 0
-        sounds.add.play()
-    })
-}, 100)
+    sounds.ad.currentTime = 0
+    sounds.ad.play()
+})
+
