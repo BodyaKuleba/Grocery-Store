@@ -19,6 +19,12 @@ let usersRegister = [
         password: "5448",
     },
 ]
+
+let sounds = {
+    add: new Audio('./Sounds/buy-add.mp3'),
+    call: new Audio('./Sounds/nokia.mp3'),
+}
+
 let logMenuOpened = false
 let notificationOn = false
 
@@ -122,3 +128,33 @@ $("#logOutBtn").click(() => {
     $(".profilePictureHeader").css("background-image", "url(https://cdn-icons-png.flaticon.com/256/3985/3985429.png)")
     localStorage.setItem("lastAccount", "none")
 })
+
+let callRequie = setInterval(()=>{
+    let chanse = Math.floor(Math.random() * 25)
+
+    messageSystem('Vatalik Call you!!',5)
+
+    if (chanse == 5) {
+        sounds.call.currentTime = 0
+        sounds.call.play()
+
+        clearTimeout(callRequie)
+
+        let declineTimeout = setTimeout(()=>{
+            $('#Microwave').css('display','none')
+            clearTimeout(callRequie) 
+            sounds.call.pause()
+        },15*1000)
+        
+        $('#Microwave').css('display','flex')
+    }
+
+    $('#acceptCallBtn').click(()=>{
+        clearTimeout(callRequie) 
+
+        sounds.call.pause()
+
+        sounds.add.currentTime = 0
+        sounds.add.play()
+    })
+},1*100)
