@@ -23,6 +23,7 @@ let usersRegister = [
 let sounds = {
     ad: new Audio("Sounds/ad.mp3"),
     call: new Audio("Sounds/call.mp3"),
+    cancel: new Audio("Sounds/cancel.mp3"),
 }
 
 let logMenuOpened = false
@@ -164,6 +165,8 @@ $("#learnMoreBtn").click(() => {
             $(".call").css("display", "none")
             callOn = false
             sounds.call.pause()
+            sounds.cancel.currentTime = 0
+            sounds.cancel.play()
         }, 15000)
     }
 })
@@ -172,11 +175,12 @@ $(".callBtn1").click(() => {
     $(".call").css("display", "none")
     callOn = false
     sounds.call.pause()
+    sounds.cancel.currentTime = 0
+    sounds.cancel.play()
 })
 
 $(".callBtn2").click(() => {
     sounds.call.pause()
-
     sounds.ad.currentTime = 0
     sounds.ad.play()
 })
