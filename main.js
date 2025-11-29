@@ -151,6 +151,7 @@ $("#logOutBtn").click(() => {
 
 // }, 1000)
 
+let declineTimeout
 let callOn = false
 
 $("#learnMoreBtn").click(() => {
@@ -161,7 +162,7 @@ $("#learnMoreBtn").click(() => {
         $(".call").css("display", "flex")
         callOn = true
 
-        let declineTimeout = setTimeout(() => {
+        declineTimeout = setTimeout(() => {
             $(".call").css("display", "none")
             callOn = false
             sounds.call.pause()
@@ -177,6 +178,7 @@ $(".callBtn1").click(() => {
     sounds.call.pause()
     sounds.cancel.currentTime = 0
     sounds.cancel.play()
+    clearTimeout(declineTimeout)
 })
 
 $(".callBtn2").click(() => {
