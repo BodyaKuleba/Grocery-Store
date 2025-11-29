@@ -21,8 +21,8 @@ let usersRegister = [
 ]
 
 let sounds = {
-    add: new Audio('./Sounds/buy-add.mp3'),
-    call: new Audio('./Sounds/nokia.mp3'),
+    ad: new Audio("Sounds/buy-add.mp3"),
+    call: new Audio("Sounds/nokia.mp3"),
 }
 
 let logMenuOpened = false
@@ -129,32 +129,32 @@ $("#logOutBtn").click(() => {
     localStorage.setItem("lastAccount", "none")
 })
 
-let callRequie = setInterval(()=>{
-    let chanse = Math.floor(Math.random() * 25)
+let callRequie = setInterval(() => {
+    let chance = Math.floor(Math.random() * 25)
 
-    messageSystem('Vatalik Call you!!',5)
+    messageSystem("Sasha is calling!", 3000)
 
-    if (chanse == 5) {
+    if (chance == 5) {
         sounds.call.currentTime = 0
         sounds.call.play()
 
         clearTimeout(callRequie)
 
-        let declineTimeout = setTimeout(()=>{
-            $('#Microwave').css('display','none')
-            clearTimeout(callRequie) 
+        let declineTimeout = setTimeout(() => {
+            $(".call").css("display", "none")
+            clearTimeout(callRequie)
             sounds.call.pause()
-        },15*1000)
-        
-        $('#Microwave').css('display','flex')
+        }, 15000)
+
+        $(".call").css("display", "flex")
     }
 
-    $('#acceptCallBtn').click(()=>{
-        clearTimeout(callRequie) 
+    $('#acceptCallBtn').click(() => {
+        clearTimeout(callRequie)
 
         sounds.call.pause()
 
         sounds.add.currentTime = 0
         sounds.add.play()
     })
-},1*100)
+}, 100)
